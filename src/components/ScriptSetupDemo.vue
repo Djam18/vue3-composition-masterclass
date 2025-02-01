@@ -49,12 +49,6 @@ function editTodo(id: number, newTodoText: string) {
   )
 }
 
-function updateNotes(id: number, notes: string) {
-  todos.value = todos.value.map((t) =>
-    t.id === id ? { ...t, notes } : t,
-  )
-}
-
 // useTemplateRef — access first TodoItem's exposed methods (preview of Commit 9)
 const firstItemRef = useTemplateRef<InstanceType<typeof TodoItem>>('firstItem')
 

@@ -193,7 +193,7 @@ function onClickCoords(e: MouseEvent) {
         <li><code>@keydown.ctrl.s.prevent</code> — Ctrl+S, prevent browser save</li>
         <li><code>@click.right.prevent</code> — right click with prevented context menu</li>
         <li><code>.passive</code> cannot be combined with <code>.prevent</code> (they conflict)</li>
-        <li>Key aliases: <code>.enter</code> <code>.esc</code> <code>.tab</code> <code>.space</code> <code>.up</code> <code>.down</code> <code>.left</code> <code>.right</code> <code>.delete</code></li>
+        <li>Key aliases: <code>.enter</code> <code>.esc</code> / <code>.escape</code> <code>.tab</code> <code>.space</code> <code>.up</code> <code>.down</code> <code>.left</code> <code>.right</code> <code>.delete</code></li>
       </ul>
     </section>
   </div>

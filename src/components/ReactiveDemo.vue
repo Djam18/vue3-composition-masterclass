@@ -76,7 +76,10 @@ const preferRef = ref({ x: 1, y: 2 })
     <section>
       <h3>readonly() — prevents mutation</h3>
       <p>readonlyState.count: {{ readonlyState.count }}</p>
-      <p><em>Attempting to write triggers a runtime warning (check DevTools)</em></p>
+      <!-- NOTE: readonlyState.count reflects state.count because readonly() is a live view.
+           If this value changes, it's because state.count changed (other buttons above),
+           NOT because the readonly mutation succeeded. The mutation is always blocked. -->
+      <p><em>Attempting to write triggers a runtime warning (check DevTools) — the value does NOT change</em></p>
       <button @click="(readonlyState as any).count++">try to mutate (console warning)</button>
     </section>
 

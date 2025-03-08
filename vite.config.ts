@@ -9,6 +9,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  // @ts-expect-error vitest config — typed by @vitest/ui but vite doesn't know it
   test: {
     globals: true,
     environment: 'jsdom',

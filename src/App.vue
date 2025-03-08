@@ -4,7 +4,7 @@
 //            template refs, form bindings, event handling,
 //            component registration, props, events, v-model, attrs, slots, provide/inject, async
 
-import { ref, shallowRef } from 'vue'
+import { ref, type Component } from 'vue'
 
 // Acte 1–3 demos
 import RefDemo from './components/RefDemo.vue'
@@ -32,7 +32,7 @@ interface NavItem {
   id: string
   label: string
   acte: number
-  component: ReturnType<typeof shallowRef>['value']
+  component: Component
 }
 
 const navItems: NavItem[] = [
@@ -71,7 +71,7 @@ const actes = [1, 2, 3, 4]
 
 const activeId = ref('registration')
 
-const activeComponent = ref(
+const activeComponent = ref<Component>(
   navItems.find((n) => n.id === activeId.value)?.component ?? RegistrationDemo,
 )
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // PropsValidation — demonstrates Boolean casting and custom validators
 
-import { PropType, computed } from 'vue'
+import { type PropType, computed } from 'vue'
 
 type Size = 'sm' | 'md' | 'lg'
 

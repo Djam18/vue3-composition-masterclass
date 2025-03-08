@@ -2,7 +2,7 @@
 // RuntimeProps — runtime prop declarations using defineProps() with the object syntax
 // This approach works without TypeScript generics and supports validators
 
-import { PropType } from 'vue'
+import { type PropType } from 'vue'
 
 type Status = 'active' | 'inactive' | 'pending'
 
@@ -24,7 +24,7 @@ const props = defineProps({
   count: {
     type: Number,
     default: 0,
-  },mkdir -p /home/abdel/Documents/Projects/vue3-composition-masterclass/src/components/props
+  },
 
   // Boolean — Vue applies casting rules
   // Passing <RuntimeProps active /> is the same as :active="true"

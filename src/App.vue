@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // Vue 3.5 Composition Masterclass
-// Actes 1–4: ref, reactive, computed, watch, lifecycle, script setup, props destructure,
+// Actes 1–5: ref, reactive, computed, watch, lifecycle, script setup, props destructure,
 //            template refs, form bindings, event handling,
-//            component registration, props, events, v-model, attrs, slots, provide/inject, async
+//            component registration, props, events, v-model, attrs, slots, provide/inject, async,
+//            composables, directives, plugins, Transition, TransitionGroup
 
 import { ref, type Component } from 'vue'
 
@@ -27,6 +28,14 @@ import AttrsDemo from './components/attrs/AttrsDemo.vue'
 import SlotsDemo from './components/slots/SlotsDemo.vue'
 import ProvideInjectDemo from './components/provide-inject/ProvideInjectDemo.vue'
 import AsyncComponentsDemo from './components/async/AsyncComponentsDemo.vue'
+
+// Acte 5 demos
+import ComposablesDemo from './components/composables/ComposablesDemo.vue'
+import MixinsVsComposables from './components/composables/MixinsVsComposables.vue'
+import DirectivesDemo from './components/directives/DirectivesDemo.vue'
+import PluginsDemo from './components/plugins/PluginsDemo.vue'
+import TransitionDemo from './components/built-ins/TransitionDemo.vue'
+import TransitionGroupDemo from './components/built-ins/TransitionGroupDemo.vue'
 
 interface NavItem {
   id: string
@@ -58,6 +67,13 @@ const navItems: NavItem[] = [
   { id: 'slots', label: 'Slots', acte: 4, component: SlotsDemo },
   { id: 'provide-inject', label: 'Provide/Inject', acte: 4, component: ProvideInjectDemo },
   { id: 'async', label: 'Async', acte: 4, component: AsyncComponentsDemo },
+  // Acte 5: Reusability & Built-ins
+  { id: 'composables', label: 'Composables', acte: 5, component: ComposablesDemo },
+  { id: 'mixins-vs-composables', label: 'Mixins vs Composables', acte: 5, component: MixinsVsComposables },
+  { id: 'directives', label: 'Custom Directives', acte: 5, component: DirectivesDemo },
+  { id: 'plugins', label: 'Plugins', acte: 5, component: PluginsDemo },
+  { id: 'transition', label: 'Transition', acte: 5, component: TransitionDemo },
+  { id: 'transition-group', label: 'TransitionGroup', acte: 5, component: TransitionGroupDemo },
 ]
 
 const acteLabels: Record<number, string> = {
@@ -65,14 +81,15 @@ const acteLabels: Record<number, string> = {
   2: 'Acte 2 — Composition API',
   3: 'Acte 3 — Templates',
   4: 'Acte 4 — Components en Profondeur',
+  5: 'Acte 5 — Reusabilite & Built-ins',
 }
 
-const actes = [1, 2, 3, 4]
+const actes = [1, 2, 3, 4, 5]
 
-const activeId = ref('registration')
+const activeId = ref('composables')
 
 const activeComponent = ref<Component>(
-  navItems.find((n) => n.id === activeId.value)?.component ?? RegistrationDemo,
+  navItems.find((n) => n.id === activeId.value)?.component ?? ComposablesDemo,
 )
 
 function navigate(item: NavItem) {
